@@ -1,8 +1,8 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const {
-  findEmployeePSNOKA,
   findSalaryByNameNik,
+  testNIKNAME,
 } = require("../controller/employee");
 const Login = require("../controller/login");
 const router = express.Router();
@@ -16,7 +16,7 @@ var validate = function (req, res, next) {
   next();
 };
 
-router.get("/test-PSNOKA-nik-Employee", validate, findEmployeePSNOKA);
+router.get("/test-PSNOKA-nik-Employee", validate, testNIKNAME);
 router.get("/find-Salary-NameNik", validate, findSalaryByNameNik);
 router.post("/login", Login);
 

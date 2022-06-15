@@ -20,7 +20,7 @@ const convertToRupiah = (angka) => {
   );
 };
 
-const findEmployeePSNOKA = async (req, res) => {
+const testNIKNAME = async (req, res) => {
   var nik = req.query.nik;
   var nama = req.query.nama.toUpperCase();
   try {
@@ -111,6 +111,6 @@ const findSalaryByNameNik = async (req, res) => {
 };
 
 module.exports = {
-  findEmployeePSNOKA,
+  testNIKNAME,
   findSalaryByNameNik,
 };
