@@ -1,0 +1,21 @@
+{
+  "user": "",
+  "date": "date",
+  "ip": {
+    "post": {
+      "route": "",
+      "query": {
+        "nik": "",
+        "nama": ""
+      },
+      "data": {
+        "TMTGAJI": "date",
+        "GAJI": "int",
+        "TSINPUT": "date",
+        "TSUPDATE": "date",
+        "FLAGUMK": "int",
+        "TSMOVE": "date"
+      }
+    }
+  }
+}

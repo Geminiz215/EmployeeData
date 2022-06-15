@@ -1,0 +1,29 @@
+{
+  "LoginDate": "date", 
+  "LogoutDate":"date",
+  "ApiUse": [
+    {
+      "queryInsert": {
+        "nik": "String",
+        "nama": "String",
+        "PSNOK": "String"
+      },
+      "dataresult": {
+        "status": "String",
+        "message": "String",
+        "return": true,
+        "data": {
+          "TMTGAJI": "",
+          "GAJI": "",
+          "TSINPUT": "",
+          "TSUPDATE": "",
+          "FLAGUMK": "",
+          "TSMOVE": ""
+        }
+      },
+      "TMTUSE": "date"
+    }
+  ]
+}
+
+

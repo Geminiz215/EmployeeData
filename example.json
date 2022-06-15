@@ -1,0 +1,21 @@
+{
+    "_id":"int",
+    "PSNOKA": "",
+    "NAMA": "",
+    "NMCETAK":"",
+    "JENKEL":"int",
+    "FLAGTANGGUNGAN":"int",
+    "NOHP":"",
+    "NIK":"",
+    "NOKTP":"",
+    "NPWP":"",
+    "NOKA":"",
+    "SALARY":{
+        "TMTGAJI":"date",
+        "GAJI":"int",
+        "TSINPUT":"date",
+        "TSUPDATE":"date",
+        "FLAGUMK":"int",
+        "TSMOVE":"date"
+    }
+}
