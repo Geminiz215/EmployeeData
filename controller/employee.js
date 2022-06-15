@@ -81,22 +81,21 @@ const findSalaryByNameNik = async (req, res) => {
         var gaji = convertToRupiah(EmployeeData.SALARY.GAJI);
         var myip = await axios.get(`https://ipapi.co/json/`);
         var mydata = jwt.verify(req.cookies.token, process.env.SECRET_KEY);
-        var resSuccessed = {
-          status: "successed",
-          data: EmployeeData.SALARY,
-          GAJI: gaji,
-          result: true,
-        };
         var history = {
           user: mydata.username,
           IP: myip.data,
           method: "GET",
           url: "http://find-Salary-NameNik",
-          data: resSuccessed,
+          data: EmployeeData.SALARY,
           query: req.query,
         };
         await historyModel.create(history);
-        res.json(resSuccessed);
+        res.json({
+          status: "successed",
+          data: EmployeeData.SALARY,
+          GAJI: gaji,
+          result: true,
+        });
       } else {
         res.json({
           status: "unsuccessed",
@@ -111,52 +110,7 @@ const findSalaryByNameNik = async (req, res) => {
   }
 };
 
-//di luar konteks
-const findSalaryByPSNOKA = async (req, res) => {
-  var nik = req.query.nik;
-  try {
-    const findSalary = await employeeModel.findOne({ NIK: nik });
-
-    if (findSalary) {
-      res.json({
-        message: "successed",
-        data: findSalary.SALARY,
-        GAJI: convertToRupiah(findSalary.SALARY.GAJI),
-      });
-    } else {
-      res.json({
-        message: `unsuccessed, can't find data`,
-      });
-    }
-  } catch (error) {
-    console.error(error);
-    res.status(404).json({ message: "unsuccessed", error: error });
-  }
-};
-
-const updateNIK = async (req, res) => {
-  const psnoka = req.params.psnoka;
-  try {
-    var hashValue = bcrypt.hashSync(req.query.nik, salt);
-    var value = hashValue;
-    const Employee = await employeeModel.findOne({PSNOKA: psnoka})
-    Employee.NIK = value
-    await Employee.save()
-    if (Employee) {
-      // res.send("Successfull");
-      res.json({message: "successed", data: Employee.NIK})
-    } else {
-      res.status(500).send("Not successfull");
-    }
-  } catch (error) {
-    console.error(error)
-    res.status(500).json({ status: error });
-  }
-};
-
 module.exports = {
   findEmployeePSNOKA,
-  findSalaryByPSNOKA,
-  updateNIK,
   findSalaryByNameNik,
 };

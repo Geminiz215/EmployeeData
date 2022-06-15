@@ -33,9 +33,9 @@ const Login = async (req, res) => {
   }
 };
 
-const Logout = async (req, res) => {
-  res.cookie("token", "", { httpOnly: true });
-  res.json({ message: "token already destroy" });
-};
+// const Logout = async (req, res) => {
+//   res.cookie("token", "", { httpOnly: true });
+//   res.json({ message: "token already destroy" });
+// };
 
-module.exports = { Login, Logout };
+module.exports = Login;
