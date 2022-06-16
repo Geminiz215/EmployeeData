@@ -1,29 +1,32 @@
 {
-  "LoginDate": "date", 
-  "LogoutDate":"date",
-  "ApiUse": [
-    {
-      "queryInsert": {
-        "nik": "String",
-        "nama": "String",
-        "PSNOK": "String"
-      },
-      "dataresult": {
-        "status": "String",
-        "message": "String",
-        "return": true,
-        "data": {
-          "TMTGAJI": "",
-          "GAJI": "",
-          "TSINPUT": "",
-          "TSUPDATE": "",
-          "FLAGUMK": "",
-          "TSMOVE": ""
-        }
-      },
-      "TMTUSE": "date"
-    }
-  ]
+  "user": "String",
+  "date": "date",
+  "IP": {
+    "ip": "String",
+    "version": "String",
+    "city": "String",
+    "region": "String",
+    "country": "String",
+    "country_name": "String",
+    "timezone": "String",
+    "asn": "String",
+    "org": "String"
+  },
+  "method": "String",
+  "url": "String",
+  "data": {
+    "status": "String",
+    "result": "Boolean",
+    "TMTGAJI": "date",
+    "GAJI": "number",
+    "TSINPUT": "date",
+    "TSUPDATE": "date",
+    "FLAGUMK": "number",
+    "TSMOVE": "date"
+  },
+  "query": {
+    "nik": "string",
+    "nama": "string",
+    "psnoka": "string"
+  }
 }
-
-
